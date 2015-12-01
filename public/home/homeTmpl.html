@@ -1,0 +1,9 @@
+<div>
+	<div class="text-center">
+		<a ui-sref="admin"><button class="btn-warning">Admin Page</button></a>
+	</div>
+	<div class="products" ng-repeat="product in products">
+		<p class="text-center">Product: {{product.name}}</p>
+	 	<p class="text-center">Price: ${{product.price}}</p>
+	 </div>
+</div>

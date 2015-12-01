@@ -1,0 +1,28 @@
+<div>
+	<div class="text-center">
+	<a ui-sref="home"><button class="btn-warning">Home Page</button></a>
+	</div>
+	<div class="container-fluid">
+		<div>
+			<div class="text-center">
+				<h2>Add Product</h2>
+				<label>Product:</label><input ng-model="newProduct.name" placeholder="Enter Product Name">
+				<label>Price:</label>$ <input ng-model="newProduct.price" placeholder="Enter Product Price">
+				<button class="btn-primary" ng-click="addProduct()">Add</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<select class="center-block" ng-options="product in products"></select>
+			<div class="text-center">
+				<h2>Edit/Delete Product</h2>
+				<label>Product:</label><input ng-model="editProduct.name">
+				<label>Price:</label>$ <input ng-model="editProduct.price">
+				<button class="btn-primary" ng-click="editProduct()">Edit</button>
+			</div>
+			<div class="text-center delete">
+				<button class="btn-danger" ng-click="deleteProduct()">DELETE</button>
+			</div>
+		<hr>
+		</div>
+	</div>

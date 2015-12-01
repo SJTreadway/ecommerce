@@ -1,0 +1,14 @@
+body {
+	background: gray;
+}
+.products {
+	font-size: 2em;
+	margin-bottom: 2%;
+	margin-top: 2%;
+}
+.delete {
+	margin-top: 2%;
+}
+.delete button{
+	width: 30%;
+}

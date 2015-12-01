@@ -2,11 +2,11 @@ var express = require('express'),
 	cors = require('cors'),
 	bodyParser = require('body-parser'),
 	mongojs = require('mongojs'),
-	port = 9001,
+	port = 8080,
 	app = express(),
 	db = mongojs('ecommerce', ['products']);
 
-app.use(bodyParser.json(), cors());
+app.use(bodyParser.json(), cors(), express.static(__dirname + '/public'));
 
 app.get('/products', function(req, res) {
 	db.products.find({}, function(err, results) {
@@ -44,8 +44,6 @@ app.delete('/products/:id', function(req, res) {
 		}
 	})
 });
-
-
 
 app.listen(port, function() {
 	console.log('Now listening on port', port);
