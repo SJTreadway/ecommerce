@@ -15,5 +15,10 @@
 					templateUrl: '/admin/adminTmpl.html',
 					controller: 'adminCtrl'
 				})
+				.state('cart', {
+					url: '/cart',
+					templateUrl: '/cart/cartTmpl.html',
+					controller: 'cartCtrl'
+				})
 		});
 })();
