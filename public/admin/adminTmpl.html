@@ -5,22 +5,26 @@
 	</div>
 	<hr>
 	<div class="row">
-		<div class="text-center col-md-6 add">
+		<div class="text-center col-md-6">
 			<h2 class="white addTitle">Add Product</h2>
-			<label class="white">Product:</label> <input ng-model="newProduct.name" placeholder="Enter Product Name">
-			<label class="white">Price: $</label> <input ng-model="newProduct.price" placeholder="Enter Product Price">
-			<button class="btn-primary" ng-click="addProduct()">Add</button>
+			<form class="form-group">
+				<label class="white">Product:</label><input class="form-control" ng-model="newProduct.name" placeholder="Enter Product Name">
+				<label class="white">Description:</label><textarea class="form-control" ng-model="newProduct.description" placeholder="Enter Brief Description"></textarea>
+				<label class="white">Price: $</label><input class="form-control" ng-model="newProduct.price" placeholder="Enter Product Price">
+			</form>
+			<button class="btn-primary add" ng-click="addProduct()">Add</button>
 		</div>
 		<div class="col-md-6">
 			<div class="text-center">
 				<h2 class="white">Edit/Delete Product</h2>
-				<select class="center-block" ng-options="product.name for product in products" ng-model="selectedProduct" ng-change="product"></select>
-				<label class="white">Product:</label> <input ng-model="selectedProduct.name">
-				<label class="white">Price: $</label> <input ng-model="selectedProduct.price">
-				<button class="btn-primary" ng-click="editProduct()">Edit</button>
-			</div>
-			<div class="text-center delete">
-				<button class="btn-danger" ng-click="deleteProduct()">DELETE</button>
+				<form class="form-group">
+					<select id="select" class="center-block form-control" ng-options="product.name for product in products" ng-model="selectedProduct" ng-change="product"></select>
+					<label class="white">Product:</label><input class="form-control" ng-model="selectedProduct.name">
+					<label class="white">Description:</label><textarea class="form-control" ng-model="selectedProduct.description"></textarea>
+					<label class="white">Price: $</label><input class="form-control" ng-model="selectedProduct.price">
+				</form>
+				<button class="btn-primary edit" ng-click="editProduct()">Edit</button>
+				<button class="btn-danger delete" ng-click="deleteProduct()">DELETE</button>
 			</div>
 		</div>
 	</div>

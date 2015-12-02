@@ -1,12 +1,14 @@
 body {
 	background: slategray;
 }
-select {
-	width: 25%;
-	margin: 2% 0;
+input {
+	height: 20%;
 }
 label {
 	font-size: 1.3em;
+}
+#select {
+	height: 30%;
 }
 .white {
 	color: white;
@@ -19,6 +21,10 @@ label {
 	float: right;
 	display: inline;
 }
+.form-control {
+	width: 50%;
+	margin: 0 auto 3%;
+}
 .products {
 	font-size: 1.5em;
 	margin-bottom: 2%;
@@ -26,15 +32,12 @@ label {
 	font-weight: bold;
 	border-bottom: 1px dashed white;
 }
-.delete {
-	margin-top: 2%;
+.edit {
+	margin-right: 2%;
 }
-.delete button{
+.delete, .add, .edit {
 	width: 30%;
 }
 .row {
 	margin-top: 5%;
-}
-.addTitle {
-	margin-bottom: 7%;
 }

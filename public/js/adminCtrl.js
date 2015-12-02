@@ -11,11 +11,11 @@
 			getProducts();
 
 			$scope.addProduct = function() {
-				if(!$scope.newProduct || !$scope.newProduct.name || !$scope.newProduct.price) {
-					alert('Please add a product and a price.');
+				if(!$scope.newProduct || !$scope.newProduct.name || !$scope.newProduct.description || !$scope.newProduct.price) {
+					alert('Please add a product, a description, and a price.');
 				}
 				else {
-					ecommerceService.addProduct($scope.newProduct.name, $scope.newProduct.price).then(function(res) {
+					ecommerceService.addProduct($scope.newProduct.name, $scope.newProduct.description, $scope.newProduct.price).then(function(res) {
 						$scope.newProduct = '';
 						alert("Your product has been added. Go back to the home page to find it.");
 					});
@@ -27,7 +27,7 @@
 					alert('Please select a product to edit.');
 				}
 				else {
-					ecommerceService.editProduct($scope.selectedProduct._id, $scope.selectedProduct.name, $scope.selectedProduct.price).then(function(res) {
+					ecommerceService.editProduct($scope.selectedProduct._id, $scope.selectedProduct.name, $scope.selectedProduct.description, $scope.selectedProduct.price).then(function(res) {
 						$scope.selectedProduct = '';
 						alert("You have successfully edited this product. Go to the home page to see your changes.")
 					});

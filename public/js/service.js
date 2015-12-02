@@ -11,23 +11,25 @@
 				})
 			};
 
-			this.addProduct = function(name, price) {
+			this.addProduct = function(name, description, price) {
 				return $http({
 					method: 'POST',
 					url: '/products',
 					data: {
 						name: name,
+						description: description,
 						price: price
 					}
 				});
 			};
 
-			this.editProduct = function(id, name, price) {
+			this.editProduct = function(id, name, description, price) {
 				return $http({
 					method: 'PUT',
 					url: '/products/' + id,
 					data: {
-						name: name, 
+						name: name,
+						description: description,
 						price: price
 					}
 				});
