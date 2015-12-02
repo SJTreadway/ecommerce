@@ -2,13 +2,6 @@
 	angular.module('ecommerceApp')
 		.controller('adminCtrl', function($scope, ecommerceService) {
 
-			$scope.addProduct = function() {
-				ecommerceService.addProduct($scope.newProduct.name, $scope.newProduct.price).then(function(res) {
-					$scope.newProduct = '';
-					alert("Your product has been added. Go back to the home page to find it.");
-				});
-			};
-
 			var getProducts = function() {
 				ecommerceService.getProducts().then(function(res) {
 					$scope.products = res;
@@ -17,18 +10,40 @@
 
 			getProducts();
 
+			$scope.addProduct = function() {
+				if(!$scope.newProduct || !$scope.newProduct.name || !$scope.newProduct.price) {
+					alert('Please add a product and a price.');
+				}
+				else {
+					ecommerceService.addProduct($scope.newProduct.name, $scope.newProduct.price).then(function(res) {
+						$scope.newProduct = '';
+						alert("Your product has been added. Go back to the home page to find it.");
+					});
+				}
+			};
+
 			$scope.editProduct = function() {
-				ecommerceService.editProduct($scope.selectedProduct._id, $scope.selectedProduct.name, $scope.selectedProduct.price).then(function(res) {
-					$scope.selectedProduct = '';
-					alert("You have successfully edited this product. Go to the home page to see your changes.")
-				});
+				if(!$scope.selectedProduct) {
+					alert('Please select a product to edit.');
+				}
+				else {
+					ecommerceService.editProduct($scope.selectedProduct._id, $scope.selectedProduct.name, $scope.selectedProduct.price).then(function(res) {
+						$scope.selectedProduct = '';
+						alert("You have successfully edited this product. Go to the home page to see your changes.")
+					});
+				}
 			};
 
 			$scope.deleteProduct = function() {
-				ecommerceService.deleteProduct($scope.selectedProduct._id).then(function(res) {
-					$scope.selectedProduct = '';
-					alert("You have successfully deleted this product. Go to the home page to see the updated list.");
-				});
+				if(!$scope.selectedProduct) {
+					alert('Please select a product to delete.');
+				}
+				else {
+					ecommerceService.deleteProduct($scope.selectedProduct._id).then(function(res) {
+						$scope.selectedProduct = '';
+						alert("You have successfully deleted this product. Go to the home page to see the updated list.");
+					});
+				}
 			};
 
 		});
