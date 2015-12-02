@@ -5,6 +5,9 @@ select {
 	width: 25%;
 	margin: 2% 0;
 }
+label {
+	font-size: 1.3em;
+}
 .white {
 	color: white;
 }
