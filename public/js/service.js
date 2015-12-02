@@ -15,9 +15,21 @@
 				return $http({
 					method: 'POST',
 					url: '/products',
-					data: name, price
-				}).then(function() {
-					alert("Your product has been added. Go back to the home page to find it.");
+					data: {
+						name: name,
+						price: price
+					}
+				});
+			};
+
+			this.editProduct = function(id, name, price) {
+				return $http({
+					method: 'PUT',
+					url: '/products/' + id,
+					data: {
+						name: name, 
+						price: price
+					}
 				});
 			};
 

@@ -1,10 +1,14 @@
 body {
-	background: gray;
+	background: gray
+}
+.white {
+	color: white;
 }
 .products {
-	font-size: 2em;
+	font-size: 1.5em;
 	margin-bottom: 2%;
 	margin-top: 2%;
+	font-weight: bold;
 }
 .delete {
 	margin-top: 2%;
