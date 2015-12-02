@@ -17,6 +17,7 @@ label {
 	margin-bottom: 2%;
 	margin-top: 2%;
 	font-weight: bold;
+	border-bottom: 1px dashed white;
 }
 .delete {
 	margin-top: 2%;
