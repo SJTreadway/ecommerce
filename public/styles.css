@@ -1,5 +1,9 @@
 body {
-	background: gray
+	background: slategray;
+}
+select {
+	width: 25%;
+	margin: 2% 0;
 }
 .white {
 	color: white;
@@ -15,4 +19,10 @@ body {
 }
 .delete button{
 	width: 30%;
+}
+.row {
+	margin-top: 5%;
+}
+.addTitle {
+	margin-bottom: 7%;
 }

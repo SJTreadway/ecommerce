@@ -3,7 +3,7 @@
 		.controller('adminCtrl', function($scope, ecommerceService) {
 
 			$scope.addProduct = function() {
-				ecommerceService.addProduct($scope.newProduct).then(function(res) {
+				ecommerceService.addProduct($scope.newProduct.name, $scope.newProduct.price).then(function(res) {
 					$scope.newProduct = '';
 					alert("Your product has been added. Go back to the home page to find it.");
 				});

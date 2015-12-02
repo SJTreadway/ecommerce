@@ -2,26 +2,25 @@
 	<div class="text-center">
 		<a ui-sref="home"><button class="btn-warning">Home Page</button></a>
 	</div>
-	<div>
-		<div class="text-center">
-			<h2 class="white">Add Product</h2>
+	<hr>
+	<div class="row">
+		<div class="text-center col-md-6 add">
+			<h2 class="white addTitle">Add Product</h2>
 			<label class="white">Product:</label> <input ng-model="newProduct.name" placeholder="Enter Product Name">
 			<label class="white">Price: $</label> <input ng-model="newProduct.price" placeholder="Enter Product Price">
 			<button class="btn-primary" ng-click="addProduct()">Add</button>
 		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<select class="center-block" ng-options="product.name for product in products" ng-model="selectedProduct" ng-change="product"></select>
-		<div class="text-center">
-			<h2 class="white">Edit/Delete Product</h2>
-			<label class="white">Product:</label> <input ng-model="selectedProduct.name">
-			<label class="white">Price: $</label> <input ng-model="selectedProduct.price">
-			<button class="btn-primary" ng-click="editProduct()">Edit</button>
+		<div class="col-md-6">
+			<div class="text-center">
+				<h2 class="white">Edit/Delete Product</h2>
+				<select class="center-block" ng-options="product.name for product in products" ng-model="selectedProduct" ng-change="product"></select>
+				<label class="white">Product:</label> <input ng-model="selectedProduct.name">
+				<label class="white">Price: $</label> <input ng-model="selectedProduct.price">
+				<button class="btn-primary" ng-click="editProduct()">Edit</button>
+			</div>
+			<div class="text-center delete">
+				<button class="btn-danger" ng-click="deleteProduct()">DELETE</button>
+			</div>
 		</div>
-		<div class="text-center delete">
-			<button class="btn-danger" ng-click="deleteProduct()">DELETE</button>
-		</div>
-	<hr>
 	</div>
 </div>
