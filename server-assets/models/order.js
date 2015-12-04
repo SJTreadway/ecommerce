@@ -17,7 +17,7 @@ var orderSchema = new mongoose.Schema({
 orderSchema.pre('save', function(next) {
 	var total = 0;
 	for (var i = 0; i < this.products.length; i++) {
-		total+= this.products[i].price;
+		total+= (this.products[i].price * this.products[i].quantity);
 	}
 
 	this.total = total;
