@@ -20,6 +20,7 @@
 						alert("Your product has been added. Go back to the home page to find it.");
 					});
 				}
+				getProducts();
 			};
 
 			$scope.editProduct = function() {
@@ -32,6 +33,7 @@
 						alert("You have successfully edited this product. Go to the home page to see your changes.")
 					});
 				}
+				getProducts();
 			};
 
 			$scope.deleteProduct = function() {
@@ -44,6 +46,7 @@
 						alert("You have successfully deleted this product. Go to the home page to see the updated list.");
 					});
 				}
+				getProducts();
 			};
 
 		});

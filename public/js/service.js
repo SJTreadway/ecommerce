@@ -5,7 +5,7 @@
 			this.getProducts = function() {
 				return $http({
 					method: 'GET',
-					url: '/products'
+					url: '/api/product'
 				}).then(function(res) {
 					return res.data;
 				})
@@ -14,7 +14,7 @@
 			this.addProduct = function(name, description, price) {
 				return $http({
 					method: 'POST',
-					url: '/products',
+					url: '/api/product',
 					data: {
 						name: name,
 						description: description,
@@ -26,7 +26,7 @@
 			this.editProduct = function(id, name, description, price) {
 				return $http({
 					method: 'PUT',
-					url: '/products/' + id,
+					url: '/api/product/' + id,
 					data: {
 						name: name,
 						description: description,
@@ -38,7 +38,7 @@
 			this.deleteProduct = function(id) {
 				return $http({
 					method: 'DELETE',
-					url: '/products/' + id
+					url: '/api/product/' + id
 				});
 			};
 		});
